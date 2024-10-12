@@ -1,0 +1,12 @@
+
+services:
+  vue-app:
+    build:
+      dockerfile: Dockerfile
+    container_name: vue-project
+    working_dir: /app
+    volumes:
+      - ./vue-project:/app
+    # ホストの 5173 ポートをコンテナの 5173 ポートにマッピング。vite.configにも設定を追加
+    ports:
+      - "5173:5173"
